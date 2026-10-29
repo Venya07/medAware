@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-lav-50: #f7f5ff;
+  --color-lav-100: #efeaff;
+  --color-lav-200: #e0d7fe;
+  --color-lav-300: #c8b8fc;
+  --color-lav-400: #a98ff6;
+  --color-lav-500: #8b6cec;
+  --color-lav-600: #7c5cd6;
+  --color-lav-700: #6646b8;
+  --color-lav-800: #523a92;
+  --color-lav-900: #3b2a68;
+}
+
+body {
+  background: #ffffff;
+  color: #1f1a33;
+}
+
+@utility card {
+  @apply rounded-3xl border border-lav-100 bg-white p-6 shadow-[0_4px_24px_-12px_rgba(91,62,180,0.25)];
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-200 active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+@utility btn-primary {
+  @apply btn bg-lav-600 text-white shadow-md shadow-lav-300/50 hover:bg-lav-700 hover:shadow-lg;
+}
+
+@utility btn-secondary {
+  @apply btn border border-lav-200 bg-white text-lav-700 hover:border-lav-400 hover:bg-lav-50;
+}
+
+@utility btn-ghost {
+  @apply btn text-slate-500 hover:bg-lav-50 hover:text-lav-700;
+}
+
+@utility input {
+  @apply w-full rounded-2xl border border-lav-200 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-lav-500 focus:ring-4 focus:ring-lav-100;
+}
+
+@utility label {
+  @apply mb-1.5 block text-sm font-medium text-slate-700;
+}
+
+@utility badge {
+  @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+}
+
+.fade-in {
+  animation: fade-in 0.35s ease-out both;
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
